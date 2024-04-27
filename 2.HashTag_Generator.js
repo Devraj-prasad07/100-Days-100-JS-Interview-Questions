@@ -16,7 +16,7 @@ const hashTagGenerator = (string) => {
   words = words.map((currEle) =>
     currEle.replace(currEle[0], currEle[0].toUpperCase())
   );
-  words = `#${words.join("")}`
+  words = `#${words.join("")}`;
   return words;
 };
 
