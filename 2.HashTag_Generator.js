@@ -8,7 +8,8 @@
 
 //* Write a function generateHash to accomplish this task.
 
-const hashTagGenerator = (string) => {
+// 1st Approach
+const hashTag = (string) => {
   if (string.length > 280 || string.trim().length === 0) {
     return false;
   }
@@ -19,5 +20,19 @@ const hashTagGenerator = (string) => {
   words = `#${words.join("")}`;
   return words;
 };
-
 console.log(hashTagGenerator("i am devraj"));
+
+
+// 2nd Approach
+const hashTagGenerator = (str) => {
+  if(str.length > 280 || str.trim().length === 0){
+    return false;
+  }
+  let words = str.split(' ');
+  words = words.map((currEle) => currEle.charAt(0).toUpperCase() + currEle.slice(1));
+  const hashTag = `#${words.join('')}`;
+  return hashTag;
+} 
+console.log(hashTagGenerator("i am devraj"));
+
+
