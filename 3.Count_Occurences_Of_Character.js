@@ -11,5 +11,16 @@
 //? The character parameter can be printable ASCII character function should accept any character that is part of the ASCII character set and is printable.
 
 const countChar = (string,charCount) => {
-    
+    string = string.toLowerCase();
+    charCount = charCount.toLowerCase();
+
+    totalChar = string.split("").reduce((previous,current) => {
+        if (current === charCount){
+            previous++;
+        }
+        return previous
+    },0);
+    return totalChar;
 }
+
+console.log(countChar("MissIssipi","I"));
