@@ -12,14 +12,16 @@
 // HomeWork
 //?  This function calculates the sum of digits without converting the number to a string.
 
+// 1st Approach
 const sumOfDigits = (num) => {
     let str = num.toString();
-    let arr = str.split(" ");
-    console.log(arr);
-    // for(let i = 0 ; i < arr.length; i++){
-    //   let sum = arr + arr[i]
-    //   return sum;
-    // }
+    let arr = str.split("").map(Number);
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+         sum += arr[i]; 
+    }
+    return sum;
 }
+console.log(sumOfDigits(12345)); // 15
+console.log(sumOfDigits(987654321)); // 45
 
-console.log(sumOfDigits(12345));
